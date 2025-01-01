@@ -1,0 +1,415 @@
+<style>
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  .hero-section {
+    background-color: rgba(2, 62, 138, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .hero-container {
+    align-self: end;
+    width: 100%;
+    max-width: 1328px;
+  }
+  .hero-content-wrapper {
+    gap: 20px;
+    display: flex;
+  }
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 58%;
+  }
+  .content-container {
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    margin: 34px -138px 0 0;
+  }
+  .header-wrapper {
+    align-self: stretch;
+    width: 100%;
+  }
+  .nav-container {
+    gap: 20px;
+    display: flex;
+  }
+  .logo-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 27%;
+  }
+  .logo {
+    aspect-ratio: 1.76;
+    object-fit: contain;
+    object-position: center;
+    width: 176px;
+    max-width: 100%;
+    flex-grow: 1;
+  }
+  .nav-links-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 73%;
+    margin-left: 20px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    align-self: stretch;
+    color: rgba(255, 255, 255, 1);
+    justify-content: start;
+    margin: auto 0;
+    font: 700 24px/1 Source Sans 3, sans-serif;
+  }
+  .nav-link {
+    align-self: stretch;
+    margin: auto 0;
+  }
+  .hero-text {
+    display: flex;
+    margin-top: 108px;
+    width: 568px;
+    max-width: 100%;
+    flex-direction: column;
+    font-family: Source Sans 3, sans-serif;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    justify-content: start;
+  }
+  .title-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 0 4px 24px;
+  }
+  .subtitle {
+    font-size: 32px;
+    font-weight: 300;
+    align-self: center;
+  }
+  .main-title {
+    font-size: 101px;
+    font-weight: 700;
+    line-height: 100px;
+  }
+  .highlight {
+    color: rgba(72, 202, 228, 1);
+  }
+  .description {
+    font-size: 18px;
+    font-weight: 400;
+    align-self: center;
+  }
+  .cta-button {
+    border-radius: 31px;
+    background-color: rgba(144, 224, 239, 1);
+    display: flex;
+    min-height: 62px;
+    align-items: center;
+    gap: 9px;
+    color: rgba(3, 4, 94, 1);
+    justify-content: start;
+    margin: 41px 0 0 176px;
+    padding: 0 12px;
+    font: 600 43px/1 Source Sans 3, sans-serif;
+  }
+  .cta-text {
+    align-self: stretch;
+    margin: auto 0;
+  }
+  .cta-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 29px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 42%;
+    margin-left: 20px;
+  }
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.14);
+    position: relative;
+    min-height: 824px;
+    width: 100%;
+    align-items: end;
+    color: rgba(3, 4, 94, 1);
+    padding: 67px 70px 722px;
+    font: 600 18px/1 Source Sans 3, sans-serif;
+  }
+  .profile-image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .social-links {
+    position: relative;
+    display: flex;
+    width: 271px;
+    max-width: 100%;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .social-icon {
+    aspect-ratio: 1.1;
+    object-fit: contain;
+    object-position: center;
+    width: 32px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  .social-icon-alt {
+    aspect-ratio: 1.17;
+    object-fit: contain;
+    object-position: center;
+    width: 34px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  .chat-button {
+    border-radius: 17px;
+    background-color: rgba(144, 224, 239, 1);
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 3px;
+  }
+  .chat-icon {
+    aspect-ratio: 1.17;
+    object-fit: contain;
+    object-position: center;
+    width: 34px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  .chat-text {
+    align-self: stretch;
+    margin: auto 0;
+  }
+  .portfolio-section {
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    margin-top: 40px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(3, 4, 94, 1);
+    white-space: nowrap;
+    text-align: center;
+    padding: 48px 80px 185px;
+    font: 700 76px/1 Source Sans 3, sans-serif;
+  }
+  .portfolio-container {
+    display: flex;
+    margin-bottom: -37px;
+    width: 100%;
+    max-width: 1122px;
+    flex-direction: column;
+  }
+  .portfolio-title {
+    align-self: center;
+  }
+  .portfolio-image {
+    aspect-ratio: 2.18;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    margin-top: 9px;
+  }
+  .about-title {
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    align-self: center;
+    margin-top: 48px;
+    font: 700 76px/1 Source Sans 3, sans-serif;
+  }
+  .about-section {
+    background-color: rgba(217, 217, 217, 1);
+    display: flex;
+    min-height: 407px;
+    margin-top: 708px;
+    width: 100%;
+  }
+  @media (max-width: 991px) {
+    .hero-container {
+      max-width: 100%;
+    }
+    .hero-content-wrapper {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+    .left-column {
+      width: 100%;
+    }
+    .content-container {
+      max-width: 100%;
+    }
+    .header-wrapper {
+      max-width: 100%;
+    }
+    .nav-container {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+    .logo-column {
+      width: 100%;
+    }
+    .logo {
+      margin-top: 40px;
+    }
+    .nav-links-column {
+      width: 100%;
+    }
+    .nav-links {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+    .hero-text {
+      margin-top: 40px;
+    }
+    .title-wrapper {
+      max-width: 100%;
+    }
+    .main-title {
+      max-width: 100%;
+      font-size: 40px;
+      line-height: 44px;
+    }
+    .description {
+      max-width: 100%;
+    }
+    .cta-button {
+      margin: 40px 0 0 10px;
+    }
+    .right-column {
+      width: 100%;
+    }
+    .profile-container {
+      max-width: 100%;
+      padding: 0 20px 100px;
+    }
+    .portfolio-section {
+      max-width: 100%;
+      font-size: 40px;
+      white-space: initial;
+      padding: 0 20px 100px;
+    }
+    .portfolio-container {
+      max-width: 100%;
+      margin-bottom: 10px;
+      font-size: 40px;
+      white-space: initial;
+    }
+    .portfolio-title {
+      font-size: 40px;
+    }
+    .portfolio-image {
+      max-width: 100%;
+    }
+    .about-title {
+      margin-top: 40px;
+      font-size: 40px;
+    }
+    .about-section {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+</style>
+
+<div class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content-wrapper">
+      <div class="left-column">
+        <div class="content-container">
+          <div class="header-wrapper">
+            <div class="nav-container">
+              <div class="logo-column">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fab4b49c89603e32b9aedf803afd768e5b6198add9fe3326abb1b2b86ef19648?placeholderIfAbsent=true&apiKey=5d7a1eb90a5e4bb8987f9f0fd3c1138b" alt="Company Logo" class="logo" />
+              </div>
+              <nav class="nav-links-column">
+                <div class="nav-links">
+                  <a href="#home" class="nav-link">Home</a>
+                  <a href="#portfolio" class="nav-link">Portfolio</a>
+                  <a href="#about" class="nav-link">About me</a>
+                  <a href="#contact" class="nav-link">Contact Us</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <div class="hero-text">
+            <div class="title-wrapper">
+              <div class="subtitle">Hi, I'm a</div>
+              <h1 class="main-title">
+                Social media<br />
+                <span class="highlight">Designer</span>
+              </h1>
+            </div>
+            <p class="description">
+              Hi! I'm Adithya, a passionate graphic designer based in the Sri Lanka.<br />
+              Welcome to the KEKO EFFECTS' Portfolio!
+            </p>
+          </div>
+          <button class="cta-button">
+            <span class="cta-text">Hire me</span>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c340985ec3cf9387f2abc98ff1d6f8f0626614110f40554dcb6c8589e8bd195?placeholderIfAbsent=true&apiKey=5d7a1eb90a5e4bb8987f9f0fd3c1138b" alt="" class="cta-icon" />
+          </button>
+        </div>
+      </div>
+      <div class="right-column">
+        <div class="profile-container">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2c308c145a3dc51890551fc977f9fd1501ff7943d70611e6afde3ffce919cd58?placeholderIfAbsent=true&apiKey=5d7a1eb90a5e4bb8987f9f0fd3c1138b" alt="Designer Profile" class="profile-image" />
+          <div class="social-links">
+            <a href="#" aria-label="Social Media Link">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0cdf1cfb71b6882fc87f1dd21bacaac5a0001328433fd3b8b0bbe1917238e844?placeholderIfAbsent=true&apiKey=5d7a1eb90a5e4bb8987f9f0fd3c1138b" alt="" class="social-icon" />
+            </a>
+            <a href="#" aria-label="Social Media Link">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1f04c96be186e79f1dba63255688099336f1950a41b7588db16c80136d027dc?placeholderIfAbsent=true&apiKey=5d7a1eb90a5e4bb8987f9f0fd3c1138b" alt="" class="social-icon-alt" />
+            </a>
+            <button class="chat-button">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b801ede0aa181fdcfe5373a99542d35197a8e2dadc0a7c0c0e319e9ce8cdd036?placeholderIfAbsent=true&apiKey=5d7a1eb90a5e4bb8987f9f0fd3c1138b" alt="" class="chat-icon" />
+              <span class="chat-text">Let's Talk</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-section">
+    <div class="portfolio-container">
+      <h2 class="portfolio-title">Portfolio</h2>
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/eade3a91abfc58fa6f0deb375e8f3c21237e45a7e8bb737139f2cb05dd40e505?placeholderIfAbsent=true&apiKey=5d7a1eb90a5e4bb8987f9f0fd3c1138b" alt="Portfolio Showcase" class="portfolio-image" />
+    </div>
+  </div>
+  <h2 class="about-title">About me</h2>
+  <div class="about-section"></div>
+</div>
